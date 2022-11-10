@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /*Ancho:6720 - Alto:1920  = 6720x1920*/
+
+        @font-face {
+            font-family: robotFont;
+            src: url(../font/Roboto-Medium.ttf);
+        }
+
+        .parking {
+            background-color: #000000;
+            font-family: robotFont;
+        }
+
+        .parking-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            padding: 0.5%;
+        }
+
+        .parking-container #title-monestir,
+        .parking-container #title-cremallera {
+            margin-top: 0.5%;
+            padding: 1vh;
+        }
+
+        .parking-container #title-monestir p,
+        .parking-container #title-cremallera p {
+            color: #FFFFFF;
+            font-size: 7vh;
+            float: right;
+        }
+
+        .parking-container #title-monestir img,
+        .parking-container #title-cremallera img {
+            width: 20vh;
+            margin-right: 3vh;
+            margin-top: 1vh;
+        }
+
+        .parking-container #block-monestir #estado-monestir,
+        .parking-container #block-cremallera #estado-cremallera {
+            margin-top: 20%;
+        }
+
+        .parking-container #block-monestir #estado-monestir p,
+        .parking-container #block-cremallera #estado-cremallera p {
+            color: white;
+            text-align: center;
+            line-height: 40%;
+            font-size: 5vh;
+        }
+
+        .parking-container #block-monestir #flecha-monestir img,
+        .parking-container #block-cremallera #flecha-cremallera img {
+            display: block;
+            margin: auto;
+            margin-top: 37%;
+            width: 20%;
+        }
+
+        .parking-container #block-info {
+            color: #FFFFFF;
+        }
+
+        .parking-container #block-info img {
+            width: 40vh;
+            margin-top: 14vh;
+            margin-right: 12vh;
+        }
+
+        .parking-container #block-info p {
+            margin-left: 25vh;
+            font-size: 4vh;
+            width: 24vh;
+            margin-bottom: 5px solid red;
+        }
+
+        .parking-container #block-info span {
+            margin-left: 25vh;
+            font-size: 1.54vh;
+        }
+    </style>
+    <title>Pantalla</title>
+</head>
+
+<body class="parking">
+    <div class="parking-container">
+        <div id="block-monestir">
+            <div id="title-monestir">
+                <img src="parking.png" alt="">
+                <p>Monestir</p>
+            </div>
+            <div id="estado-monestir">
+                <strong>
+                    <p>Ple</p>
+                </strong>
+                <p>Completo</p>
+                <p>Full</p>
+            </div>
+            <div id="flecha-monestir">
+                <img src="arrow.png" alt="">
+            </div>
+        </div>
+
+        <div id="block-info">
+            <img src="cremallera-logo.png" alt="">
+            <strong>
+                <p>
+                    Cremalleras i funiculars de Monstserrat
+                    <hr>
+                    <span>BAGES ANOIA BAIX LLOBREGAT</span>
+                </p>
+            </strong>
+        </div>
+
+        <div id="block-cremallera">
+            <div id="title-cremallera">
+                <img src="parking.png" alt="">
+                <p>Cremallera</p>
+            </div>
+            <div id="estado-cremallera">
+                <strong>
+                    <p>Lliure</p>
+                </strong>
+                <p>Libre</p>
+                <p>Free</p>
+            </div>
+            <div id="flecha-cremallera">
+                <img src="arrow.png" alt="">
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        
+        var socket = io.connect("http://localhost:3000", { forceNew: true });
+
+        socket.on('admira', function(data) {
+            console.log(data)
+        })
+        
+       
+    </script>
+
+</body>
+
+</html>
