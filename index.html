@@ -106,7 +106,7 @@
             </div>
             <div id="estado-monestir">
                 <strong>
-                    <p id="parking_status">Ple</p>
+                    <p id="parking-monestir-status">Ple</p>
                 </strong>
                 <p>Completo</p>
                 <p>Full</p>
@@ -134,7 +134,7 @@
             </div>
             <div id="estado-cremallera">
                 <strong>
-                    <p id="parking_status-2">Lliure</p>
+                    <p id="parking-cremallera-status">Lliure</p>
                 </strong>
                 <p>Libre</p>
                 <p>Free</p>
@@ -146,8 +146,8 @@
     </div>
     <script type="text/javascript">
         
-        let monestirStatus = document.getElementById("parking_status");
-        let cremalleraStatus = document.getElementById("parking_status-2");
+        let monestirStatus = document.getElementById("parking-monestir-status");
+        let cremalleraStatus = document.getElementById("parking-cremallera-status");
 
         var socket = io.connect("http://gagandeep.alwaysdata.net", { forceNew: true });
 
