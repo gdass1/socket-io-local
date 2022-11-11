@@ -5,9 +5,14 @@
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+    <!-- LOCAL -->
+    <!--<script src="http://localhost:3000/socket.io/socket.io.js"></script>-->
+
+    <!-- REMOTO -->
+    <script src="http://gagandeep.alwaysdata.net/socket.io/socket.io.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+        
         /*Ancho:6720 - Alto:1920  = 6720x1920*/
 
         @font-face {
@@ -102,10 +107,10 @@
             </div>
             <div id="estado-monestir">
                 <strong>
-                    <p>Ple</p>
+                    <p id="parking-monestir-status-1">Ple</p>
                 </strong>
-                <p>Completo</p>
-                <p>Full</p>
+                <p id="parking-monestir-status-2">Completo</p>
+                <p id="parking-monestir-status-3">Full</p>
             </div>
             <div id="flecha-monestir">
                 <img src="arrow.png" alt="">
@@ -130,10 +135,10 @@
             </div>
             <div id="estado-cremallera">
                 <strong>
-                    <p>Lliure</p>
+                    <p id="parking-cremallera-status-1">Lliure</p>
                 </strong>
-                <p>Libre</p>
-                <p>Free</p>
+                <p id="parking-cremallera-status-2">Libre</p>
+                <p id="parking-cremallera-status-3">Free</p>
             </div>
             <div id="flecha-cremallera">
                 <img src="arrow.png" alt="">
