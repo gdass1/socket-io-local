@@ -1,4 +1,4 @@
-
+console.log("hola , he entrado en el script")
 let monestirStatus1 = document.getElementById("parking-monestir-status-1");
 let monestirStatus2 = document.getElementById("parking-monestir-status-2");
 let monestirStatus3 = document.getElementById("parking-monestir-status-3");
@@ -9,15 +9,44 @@ let cremalleraStatus3 = document.getElementById("parking-cremallera-status-3");
 
 var socket = io.connect("http://gagandeep.alwaysdata.net", { forceNew: true });
 
-socket.on('admira', function (data) {
-    
-    data.toLowerCase()
+socket.on('parking', function (data) {
 
-    if(data === 'lliure') {
-        
+    //console.log("Data:-->"+data+"<--")
+
+    if(data.parking) {
+        console.log("Parking: -->"+data.parking+"<--")
+        if(data.parking == 'monestir' || data.parking == 'Monestir') {
+            monestirStatus1.innerHTML = data.message
+            monestirStatus2.innerHTML = data.message
+            monestirStatus3.innerHTML = data.message
+        } else {
+            data.parking == 'Cremallera';
+            cremalleraStatus1.innerHTML = data.message
+            cremalleraStatus2.innerHTML = data.message
+            cremalleraStatus3.innerHTML = data.message
+        }
     }
-    console.log(data)
-
-    monestirStatus1.innerHTML = data
-    cremalleraStatus1.innerHTML = data
+    
 })
+
+/*
+socket.on('parking', function (data) {
+
+    //console.log("Data:-->"+data+"<--")
+
+    if(data.parking) {
+        console.log("Parking: -->"+data.parking+"<--")
+        if(data.parking == 'monestir' || data.parking == 'Monestir') {
+            monestirStatus1.innerHTML = data.message
+            monestirStatus2.innerHTML = data.message
+            monestirStatus3.innerHTML = data.message
+        } else {
+            data.parking == 'Cremallera';
+            cremalleraStatus1.innerHTML = data.message
+            cremalleraStatus2.innerHTML = data.message
+            cremalleraStatus3.innerHTML = data.message
+        }
+    }
+    
+})
+*/
