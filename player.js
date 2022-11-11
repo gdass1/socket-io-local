@@ -9,26 +9,28 @@ let cremalleraStatus3 = document.getElementById("parking-cremallera-status-3");
 
 var socket = io.connect("http://localhost:3000", { forceNew: true });
 
-socket.on('connect', function() {
-    socket.on('parking', function (data) {
+socket.on('connect', function(){
+    console.log("connected")
+})
 
-        //console.log("Data:-->"+data+"<--")
-    
-        if(data.parking) {
-            console.log("Parking: -->"+data.parking+"<--")
-            if(data.parking == 'monestir' || data.parking == 'Monestir') {
-                monestirStatus1.innerHTML = data.message
-                monestirStatus2.innerHTML = data.message
-                monestirStatus3.innerHTML = data.message
-            } else {
-                data.parking == 'Cremallera';
-                cremalleraStatus1.innerHTML = data.message
-                cremalleraStatus2.innerHTML = data.message
-                cremalleraStatus3.innerHTML = data.message
-            }
+socket.on('parking', function (data) {
+
+    //console.log("Data:-->"+data+"<--")
+
+    if (data.parking) {
+        console.log("Parking: -->" + data.parking + "<--")
+        if (data.parking == 'monestir' || data.parking == 'Monestir') {
+            monestirStatus1.innerHTML = data.message
+            monestirStatus2.innerHTML = data.message
+            monestirStatus3.innerHTML = data.message
+        } else {
+            data.parking == 'Cremallera';
+            cremalleraStatus1.innerHTML = data.message
+            cremalleraStatus2.innerHTML = data.message
+            cremalleraStatus3.innerHTML = data.message
         }
-        
-    })
+    }
+
 })
 
 /*
