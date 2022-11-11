@@ -8,10 +8,11 @@
     <!-- LOCAL -->
     <!--<script src="http://localhost:3000/socket.io/socket.io.js"></script>-->
 
-    <!-- Remoto -->
+    <!-- REMOTO -->
     <script src="http://gagandeep.alwaysdata.net/socket.io/socket.io.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+        
         /*Ancho:6720 - Alto:1920  = 6720x1920*/
 
         @font-face {
@@ -106,10 +107,10 @@
             </div>
             <div id="estado-monestir">
                 <strong>
-                    <p id="parking-monestir-status">Ple</p>
+                    <p id="parking-monestir-status-1">Ple</p>
                 </strong>
-                <p>Completo</p>
-                <p>Full</p>
+                <p id="parking-monestir-status-2">Completo</p>
+                <p id="parking-monestir-status-3">Full</p>
             </div>
             <div id="flecha-monestir">
                 <img src="arrow.png" alt="">
@@ -134,33 +135,17 @@
             </div>
             <div id="estado-cremallera">
                 <strong>
-                    <p id="parking-cremallera-status">Lliure</p>
+                    <p id="parking-cremallera-status-1">Lliure</p>
                 </strong>
-                <p>Libre</p>
-                <p>Free</p>
+                <p id="parking-cremallera-status-2">Libre</p>
+                <p id="parking-cremallera-status-3">Free</p>
             </div>
             <div id="flecha-cremallera">
                 <img src="arrow.png" alt="">
             </div>
         </div>
     </div>
-    <script type="text/javascript">
-        
-        let monestirStatus = document.getElementById("parking-monestir-status");
-        let cremalleraStatus = document.getElementById("parking-cremallera-status");
-
-        var socket = io.connect("http://gagandeep.alwaysdata.net", { forceNew: true });
-
-        socket.on('admira', function(data) {
-            console.log(data)
-
-            monestirStatus.innerHTML = data
-            cremalleraStatus.innerHTML = data
-        })
-        
-       
-    </script>
-
+    <script src="player.js"></script>
 </body>
 
 </html>
