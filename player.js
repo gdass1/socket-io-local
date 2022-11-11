@@ -16,14 +16,14 @@ socket.on('parking', function (data) {
     if(data.parking) {
         console.log("Parking: -->"+data.parking+"<--")
         if(data.parking == 'monestir' || data.parking == 'Monestir') {
-            monestirStatus1.innerHTML = data.message
-            monestirStatus2.innerHTML = data.message
-            monestirStatus3.innerHTML = data.message
+            $(monestirStatus1).html(data.message)
+            $(monestirStatus2).html(data.message)
+            $(monestirStatus3).html(data.message)
         } else {
             data.parking == 'Cremallera';
-            cremalleraStatus1.innerHTML = data.message
-            cremalleraStatus2.innerHTML = data.message
-            cremalleraStatus3.innerHTML = data.message
+            $(cremalleraStatus1).html(data.message)
+            $(cremalleraStatus2).html(data.message)
+            $(cremalleraStatus3).html(data.message)
         }
     }
     
